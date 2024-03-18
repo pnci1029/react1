@@ -39,30 +39,25 @@ function App() {
             <main>
                 <section id="core-concepts">
                     <ul>
-                        <CoreConcept
-                            title={CORE_CONCEPTS[0].title}
-                            description={CORE_CONCEPTS[0].description}
-                            image={CORE_CONCEPTS[0].image}
-                        />
-                        <CoreConcept {...CORE_CONCEPTS[1]}/>
-                        <CoreConcept {...CORE_CONCEPTS[2]}/>
-                        <CoreConcept {...CORE_CONCEPTS[3]}/>
+                        {CORE_CONCEPTS.map((concept) =>
+                            <CoreConcept key={concept.title} {...concept}/>
+                        )}
                     </ul>
 
                 </section>
                 <section id="examples">
                     <h2>Examples</h2>
                     <menu>
-                        <TabButton isSelected = {selectedTopic === 'components'}
+                        <TabButton isSelected={selectedTopic === 'components'}
                                    onSelect={() => handleSelect('components')}
                         >Components</TabButton>
-                        <TabButton isSelected = {selectedTopic === 'jsx'}
-                            onSelect={() => handleSelect('jsx')}
+                        <TabButton isSelected={selectedTopic === 'jsx'}
+                                   onSelect={() => handleSelect('jsx')}
                         >JSX</TabButton>
-                        <TabButton isSelected = {selectedTopic === 'props'}
+                        <TabButton isSelected={selectedTopic === 'props'}
                                    onSelect={() => handleSelect('props')}
                         >Props</TabButton>
-                        <TabButton isSelected = {selectedTopic === 'state'}
+                        <TabButton isSelected={selectedTopic === 'state'}
                                    onSelect={() => handleSelect('state')}
                         >State</TabButton>
                     </menu>
