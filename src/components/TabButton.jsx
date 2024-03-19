@@ -1,7 +1,4 @@
 export default function TabButton({children, onSelect, isSelected}) {
-    // function handleClick() {
-    //     console.log('hello world!');
-    // }
 
     return (
         <li>
